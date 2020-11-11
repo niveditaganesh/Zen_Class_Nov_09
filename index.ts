@@ -23,26 +23,26 @@ let video_ele = <HTMLVideoElement>document.querySelector("#video");
     video_ele.style.height = this.TvInfo.disp_height;
     this.setChannel(this.channel);
     this.setVolume(this.volume);
-    let previous = <HTMLAreaElement>document.getElementById("prev");
+    let previous = <HTMLButtonElement>document.getElementById("prev");
     previous.onclick = this.previousChannel();
-    let next = <HTMLAreaElement>document.getElementById("next");
+    let next = <HTMLButtonElement>document.getElementById("next");
     next.onclick = this.nextChannel();
-    let volumeUp = <HTMLAreaElement>document.getElementById("vol_u");
+    let volumeUp = <HTMLButtonElement>document.getElementById("vol_u");
     volumeUp.onclick = this.increaseVolume();
-    let volumeDown = <HTMLAreaElement>document.getElementById("vol_d");
+    let volumeDown = <HTMLButtonElement>document.getElementById("vol_d");
     volumeDown.onclick = this.decreaseVolume();
     }
 
     setChannel(channel:number):void{
         if(channel>0 && channel<=5){
         this.channel=channel;
-        let videoContainer=(<HTMLDivElement>document.querySelector('.coz'))
-        let video_ele = document.createElement("video");
+        var videoContainer=(<HTMLDivElement>document.querySelector('.coz'))
+        var video_ele = document.createElement("video");
         video_ele.setAttribute("id", "video");
         video_ele.setAttribute("controls", "true");
         video_ele.style.width = this.TvInfo.disp_width;
         video_ele.style.height = this.TvInfo.disp_height;;
-      let vdeo = document.createElement("source");
+      var vdeo = document.createElement("source");
       vdeo.setAttribute("src", channelz[this.channel]);
       vdeo.setAttribute("id", "vdeo");
       vdeo.setAttribute("type", "video/mp4");
